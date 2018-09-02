@@ -1,0 +1,5 @@
+C:\MakeStart\Startest\Startest.DataAccess\obj\Debug\Startest.DataAccess.csprojAssemblyReference.cache
+C:\MakeStart\Startest\Startest.DataAccess\obj\Debug\Startest.DataAccess.Properties.Resources.resources
+C:\MakeStart\Startest\Startest.DataAccess\obj\Debug\Startest.DataAccess.ServiceStack.FluentValidation.Resources.Messages.resources
+C:\MakeStart\Startest\Startest.DataAccess\obj\Debug\Startest.DataAccess.csproj.GenerateResource.cache
+C:\MakeStart\Startest\Startest.DataAccess\obj\Debug\Startest.DataAccess.csproj.CoreCompileInputs.cache
