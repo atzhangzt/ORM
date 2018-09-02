@@ -1,0 +1,1222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEC475A2-31F3-43AF-A45B-B1628044F91B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Startest.DataAccess</RootNamespace>
+    <AssemblyName>Startest.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <LangVersion>7.2</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\ReferenceBin\Startest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET45;NET45</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\ReferenceBin\Startest\</OutputPath>
+    <DefineConstants>TRACE;NET45;RELEASE;NET45</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\ReferenceBin\Startest\Startest.DataAccess.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.2</LangVersion>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DDTek.Oracle, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\DDTek.Oracle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Mono.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\MySql.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Npgsql.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\System.Data.SQLite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\..\ReferenceBin\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionFactory.cs" />
+    <Compile Include="DbConnection.cs" />
+    <Compile Include="Enum\enumDbType.cs" />
+    <Compile Include="IDbConnection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceStack.Client\AsyncServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\AsyncState.cs" />
+    <Compile Include="ServiceStack.Client\AsyncUtils.cs" />
+    <Compile Include="ServiceStack.Client\AuthDtos.cs" />
+    <Compile Include="ServiceStack.Client\CachedServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\ClientFactory.cs" />
+    <Compile Include="ServiceStack.Client\ContentFormat.cs" />
+    <Compile Include="ServiceStack.Client\CryptUtils.cs" />
+    <Compile Include="ServiceStack.Client\EncryptedServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\GenericProxy.cs" />
+    <Compile Include="ServiceStack.Client\IDuplex.cs" />
+    <Compile Include="ServiceStack.Client\IDuplexCallback.cs" />
+    <Compile Include="ServiceStack.Client\IOneWay.cs" />
+    <Compile Include="ServiceStack.Client\ISyncReply.cs" />
+    <Compile Include="ServiceStack.Client\IWcfServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\JsonServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\JsvServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\MessageExtensions.cs" />
+    <Compile Include="ServiceStack.Client\Messaging\InMemoryMessageQueueClient.cs" />
+    <Compile Include="ServiceStack.Client\Messaging\MessageQueueClientFactory.cs" />
+    <Compile Include="ServiceStack.Client\Messaging\RedisMessageFactory.cs" />
+    <Compile Include="ServiceStack.Client\Messaging\RedisMessageProducer.cs" />
+    <Compile Include="ServiceStack.Client\Messaging\RedisMessageQueueClient.cs" />
+    <Compile Include="ServiceStack.Client\Messaging\RedisMessageQueueClientFactory.cs" />
+    <Compile Include="ServiceStack.Client\Pcl.NameValueCollectionWrapper.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.Android.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.Ios.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.Net40.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.SL5.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.WinStore.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.Wp.cs" />
+    <Compile Include="ServiceStack.Client\PclExportClient.Xbox.cs" />
+    <Compile Include="ServiceStack.Client\ResponseStatusUtils.cs" />
+    <Compile Include="ServiceStack.Client\RouteMember.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\DataContractSerializer.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\DataContractSerializer.Deserialize.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\IStringStreamSerializer.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\JsonDataContractSerializer.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\JsonDataContractSerializer.Deserialize.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\KeyValueDataContractDeserializer.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\StringMapTypeDeserializer.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\XmlSerializableSerializer.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\XmlSerializableSerializer.Deserialize.cs" />
+    <Compile Include="ServiceStack.Client\Serialization\XmlSerializableWrapper.cs" />
+    <Compile Include="ServiceStack.Client\ServerEventsClient.cs" />
+    <Compile Include="ServiceStack.Client\ServerEventsClient.Receiver.cs" />
+    <Compile Include="ServiceStack.Client\ServiceClientBase.cs" />
+    <Compile Include="ServiceStack.Client\Soap11ServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\Soap12ServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\StreamExt.cs" />
+    <Compile Include="ServiceStack.Client\Support\NetDeflateProvider.cs" />
+    <Compile Include="ServiceStack.Client\Support\NetGZipProvider.cs" />
+    <Compile Include="ServiceStack.Client\UrlExtensions.cs" />
+    <Compile Include="ServiceStack.Client\Validation\ValidationError.cs" />
+    <Compile Include="ServiceStack.Client\Validation\ValidationErrorField.cs" />
+    <Compile Include="ServiceStack.Client\Validation\ValidationErrorResult.cs" />
+    <Compile Include="ServiceStack.Client\WcfServiceClient.cs" />
+    <Compile Include="ServiceStack.Client\WebRequestUtils.cs" />
+    <Compile Include="ServiceStack.Client\WebServiceException.cs" />
+    <Compile Include="ServiceStack.Client\XmlServiceClient.cs" />
+    <Compile Include="ServiceStack.Common\ActionExecExtensions.cs" />
+    <Compile Include="ServiceStack.Common\AssertExtensions.cs" />
+    <Compile Include="ServiceStack.Common\AssertUtils.cs" />
+    <Compile Include="ServiceStack.Common\AttributeExtensions.cs" />
+    <Compile Include="ServiceStack.Common\ByteArrayExtensions.cs" />
+    <Compile Include="ServiceStack.Common\CommandsUtils.cs" />
+    <Compile Include="ServiceStack.Common\Data\DbConnectionFactory.cs" />
+    <Compile Include="ServiceStack.Common\Data\IDbConnectionFactory.cs" />
+    <Compile Include="ServiceStack.Common\Data\IHasDbConnection.cs" />
+    <Compile Include="ServiceStack.Common\DictionaryExtensions.cs" />
+    <Compile Include="ServiceStack.Common\DirectoryInfoExtensions.cs" />
+    <Compile Include="ServiceStack.Common\DisposableExtensions.cs" />
+    <Compile Include="ServiceStack.Common\EnumerableExtensions.cs" />
+    <Compile Include="ServiceStack.Common\EnumExtensions.cs" />
+    <Compile Include="ServiceStack.Common\ExecExtensions.cs" />
+    <Compile Include="ServiceStack.Common\FuncUtils.cs" />
+    <Compile Include="ServiceStack.Common\IdUtils.cs" />
+    <Compile Include="ServiceStack.Common\IntExtensions.cs" />
+    <Compile Include="ServiceStack.Common\IPAddressExtensions.cs" />
+    <Compile Include="ServiceStack.Common\Logging\ConsoleLogFactory.cs" />
+    <Compile Include="ServiceStack.Common\Logging\ConsoleLogger.cs" />
+    <Compile Include="ServiceStack.Common\Logging\DebugLogFactory.cs" />
+    <Compile Include="ServiceStack.Common\Logging\DebugLogger.cs" />
+    <Compile Include="ServiceStack.Common\MetadataTypes.cs" />
+    <Compile Include="ServiceStack.Common\ModelConfig.cs" />
+    <Compile Include="ServiceStack.Common\PerfUtils.cs" />
+    <Compile Include="ServiceStack.Common\Reflection\DelegateFactory.cs" />
+    <Compile Include="ServiceStack.Common\Reflection\PropertyAccessor.cs" />
+    <Compile Include="ServiceStack.Common\Reflection\StaticAccessors.cs" />
+    <Compile Include="ServiceStack.Common\StringUtils.cs" />
+    <Compile Include="ServiceStack.Common\Support\ActionExecHandler.cs" />
+    <Compile Include="ServiceStack.Common\Support\AdapterBase.cs" />
+    <Compile Include="ServiceStack.Common\Support\CommandExecsHandler.cs" />
+    <Compile Include="ServiceStack.Common\Support\CommandResultsHandler.cs" />
+    <Compile Include="ServiceStack.Common\Support\InMemoryLogFactory.cs" />
+    <Compile Include="ServiceStack.Common\Support\Thread.WinRT.cs" />
+    <Compile Include="ServiceStack.Common\TypeExtensions.cs" />
+    <Compile Include="ServiceStack.Common\UrnId.cs" />
+    <Compile Include="ServiceStack.Common\XLinqExtensions.cs" />
+    <Compile Include="ServiceStack.Interfaces\ApiAllowableValuesAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\ApiAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\ApiMemberAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\ApiResponse.cs" />
+    <Compile Include="ServiceStack.Interfaces\AttributeBase.cs" />
+    <Compile Include="ServiceStack.Interfaces\Auth\IUserAuth.cs" />
+    <Compile Include="ServiceStack.Interfaces\AutoQueryViewerAttributes.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\ICacheClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\ICacheClientExtended.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\IDeflateProvider.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\IGZipProvider.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\IMemcachedClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\IRemoveByPattern.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\ISession.cs" />
+    <Compile Include="ServiceStack.Interfaces\Caching\ISessionFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\CollectionTypes.cs" />
+    <Compile Include="ServiceStack.Interfaces\Commands\ICommand.cs" />
+    <Compile Include="ServiceStack.Interfaces\Commands\ICommand.Generic.cs" />
+    <Compile Include="ServiceStack.Interfaces\Commands\ICommandExec.cs" />
+    <Compile Include="ServiceStack.Interfaces\Commands\ICommandList.cs" />
+    <Compile Include="ServiceStack.Interfaces\Configuration\IAppSettings.cs" />
+    <Compile Include="ServiceStack.Interfaces\Configuration\IContainerAdapter.cs" />
+    <Compile Include="ServiceStack.Interfaces\Configuration\IRelease.cs" />
+    <Compile Include="ServiceStack.Interfaces\Configuration\IResolver.cs" />
+    <Compile Include="ServiceStack.Interfaces\Configuration\ITypeFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\AliasAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\AutoIncrementAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\BelongToAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\CompositeIndexAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\CompositeKeyAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\ComputeAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\CustomFieldAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\DecimalLengthAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\DefaultAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\DescriptionAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\EnumAsIntAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\ExcludeAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\ForeignKeyAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\HashKeyAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\IgnoreAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\IndexAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\MetaAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\PostCreateTableAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\PostDropTableAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\PreCreateTableAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\PreDropTableAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\PrimaryKeyAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\RangeAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\RangeKeyAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\ReferenceAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\ReferencesAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\RequiredAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\RowVersionAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\SchemaAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\SequenceAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\DataAnnotations\StringLengthAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\Data\DataException.cs" />
+    <Compile Include="ServiceStack.Interfaces\Data\IEntityStore.cs" />
+    <Compile Include="ServiceStack.Interfaces\Data\IEntityStore.Generic.cs" />
+    <Compile Include="ServiceStack.Interfaces\Data\OptimisticConcurrencyException.cs" />
+    <Compile Include="ServiceStack.Interfaces\ErrorResponse.cs" />
+    <Compile Include="ServiceStack.Interfaces\Feature.cs" />
+    <Compile Include="ServiceStack.Interfaces\ICompressor.cs" />
+    <Compile Include="ServiceStack.Interfaces\IEncryptedClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\IHasResponseStatus.cs" />
+    <Compile Include="ServiceStack.Interfaces\IMeta.cs" />
+    <Compile Include="ServiceStack.Interfaces\IOneWayClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\IO\IEndpoint.cs" />
+    <Compile Include="ServiceStack.Interfaces\IO\IVirtualDirectory.cs" />
+    <Compile Include="ServiceStack.Interfaces\IO\IVirtualFile.cs" />
+    <Compile Include="ServiceStack.Interfaces\IO\IVirtualFiles.cs" />
+    <Compile Include="ServiceStack.Interfaces\IO\IVirtualNode.cs" />
+    <Compile Include="ServiceStack.Interfaces\IO\IVirtualPathProvider.cs" />
+    <Compile Include="ServiceStack.Interfaces\IQuery.cs" />
+    <Compile Include="ServiceStack.Interfaces\IReceiver.cs" />
+    <Compile Include="ServiceStack.Interfaces\IReplyClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\IRequiresSchema.cs" />
+    <Compile Include="ServiceStack.Interfaces\IResponseStatus.cs" />
+    <Compile Include="ServiceStack.Interfaces\IRestClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\IRestClientAsync.cs" />
+    <Compile Include="ServiceStack.Interfaces\IRestGateway.cs" />
+    <Compile Include="ServiceStack.Interfaces\ISequenceSource.cs" />
+    <Compile Include="ServiceStack.Interfaces\IService.cs" />
+    <Compile Include="ServiceStack.Interfaces\IServiceClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\IServiceClientAsync.cs" />
+    <Compile Include="ServiceStack.Interfaces\IUrlFilter.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\GenericLogFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\GenericLogger.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\ILog.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\ILogFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\LogManager.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\NullDebugLogger.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\NullLogFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\StringBuilderLog.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\TestLogFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\Logging\TestLogger.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\IMessage.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\IMessageFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\IMessageHandler.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\IMessageProducer.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\IMessageQueueClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\IMessageQueueClientFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\IMessageService.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\MessageFactory.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\MessageHandlerStats.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\MessageOption.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\MessagingException.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\QueueNames.cs" />
+    <Compile Include="ServiceStack.Interfaces\Messaging\UnRetryableMessagingException.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\ICacheByDateModified.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\ICacheByEtag.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasAction.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasGuidId.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasId.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasIntId.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasLongId.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasNamed.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasNamedCollection.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasNamedList.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IHasStringId.cs" />
+    <Compile Include="ServiceStack.Interfaces\Model\IResponseStatusConvertible.cs" />
+    <Compile Include="ServiceStack.Interfaces\NamedConnectionAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\Property.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisHash.Generic.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisList.Generic.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisSet.Generic.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisSortedSet.Generic.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisTransaction.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisTypedClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisTypedPipeline.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Generic\IRedisTypedQueueableOperation.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisClientCacheManager.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisClientsManager.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisHash.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisList.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisNativeClient.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisPubSubServer.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisSet.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisSortedSet.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisSubscription.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisTransaction.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\IRedisTransactionBase.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\ItemRef.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Pipeline\IRedisPipeline.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Pipeline\IRedisPipelineShared.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Pipeline\IRedisQueueableOperation.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\Pipeline\IRedisQueueCompletableOperation.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\RedisClientType.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\RedisData.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\RedisKeyType.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\RedisServerRole.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\RedisText.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\ScanResult.cs" />
+    <Compile Include="ServiceStack.Interfaces\Redis\SortOptions.cs" />
+    <Compile Include="ServiceStack.Interfaces\RequestAttributes.cs" />
+    <Compile Include="ServiceStack.Interfaces\RequestLogEntry.cs" />
+    <Compile Include="ServiceStack.Interfaces\ResponseError.cs" />
+    <Compile Include="ServiceStack.Interfaces\ResponseStatus.cs" />
+    <Compile Include="ServiceStack.Interfaces\RestrictAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\RouteAttribute.cs" />
+    <Compile Include="ServiceStack.Interfaces\SwaggerType.cs" />
+    <Compile Include="ServiceStack.Interfaces\UploadFile.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IContentTypeReader.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IContentTypes.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IContentTypeWriter.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\ICookies.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IExpirable.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHasOptions.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHasRequestFilter.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHasResponseFilter.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHttpError.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHttpFile.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHttpRequest.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHttpResponse.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IHttpResult.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\INameValueCollection.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IPartialWriter.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IRequest.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IRequestLogger.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IRequestPreferences.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IRequiresRequest.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IRequiresRequestStream.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IResponse.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IRestPath.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IServiceController.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IServiceRoutes.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IServiceRunner.cs" />
+    <Compile Include="ServiceStack.Interfaces\Web\IStreamWriter.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\Converters\MySqlBoolConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\Converters\MySqlDateTimeConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\Converters\MySqlDateTimeOffsetConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\Converters\MySqlFloatConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\Converters\MySqlGuidConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\Converters\MySqlIntegerConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\Converters\MySqlStringConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\DataAnnotations\TextAttribute.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\MySqlDialect.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\MySqlDialectProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite.MySql\MySqlExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleBoolConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleByteArrayConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleCharArrayConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleDateTimeConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleDateTimeOffsetConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleEnumConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleFloatConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleGuidConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleIntegerConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleStringConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\Converters\OracleTimeSpanAsIntConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\IColumn.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\IParameter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\IProcedure.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\ISchema.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\ITable.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\ParameterDirection.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\PocoCreator.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\DbSchema\ProcedureType.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleDataReader.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleDialect.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleExecFilter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleNamingStrategy.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleOrmLiteDialectProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleSqlExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleTimestampConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OracleValue.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OraSchema\ClassWriter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OraSchema\Column.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OraSchema\Parameter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OraSchema\Procedure.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OraSchema\Schema.cs" />
+    <Compile Include="ServiceStack.OrmLite.Oracle\OraSchema\Table.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlArrayConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlBoolConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlDateTimeConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlDateTimeOffsetConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlDecimalConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlGuidConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlIntegerConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostgreSqlStringConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\Converters\PostrgreSqlFloatConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\PostgreSqlDialect.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\PostgreSQLDialectProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\PostgreSqlExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite.PostgreSQL\PostgreSqlNamingStrategy.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\Converters\SqliteBoolConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\Converters\SqliteByteArrayConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\Converters\SqliteDateTimeConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\Converters\SqliteDateTimeOffsetConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\Converters\SqliteGuidConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\Converters\SqliteStringConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\SqliteDialect.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\SqliteExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\SqliteOrmLiteDialectProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite.Sqlite\SqliteOrmLiteDialectProviderBase.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerBoolConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerByteArrayConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerDateTime2Converter.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerDateTimeConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerFloatConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerGuidConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerIntegerConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerSpecialConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerStringConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\Converters\SqlServerTimeConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\SqlServer2012OrmLiteDialectProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\SqlServerDialect.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\SqlServerExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite.SqlServer\SqlServerOrmLiteDialectProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite\Async\OrmLiteReadCommandExtensionsAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\Async\OrmLiteResultsFilterExtensionsAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\Async\OrmLiteUtilExtensionsAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\Async\OrmLiteWriteCommandExtensionsAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\Async\ReadExpressionCommandExtensionsAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\Async\WriteExpressionCommandExtensionsAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\BoolConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\ByteArrayConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\DateTimeConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\DateTimeOffsetConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\FloatConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\GuidConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\IntegerConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\SpecialConverters.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\StringConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\Converters\TimeSpanAsIntConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\Dapper\SqlMapper.Async.cs" />
+    <Compile Include="ServiceStack.OrmLite\Dapper\SqlMapper.cs" />
+    <Compile Include="ServiceStack.OrmLite\DbTypes.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\IUntypedSqlExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\ParameterizedSqlExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\ParameterRebinder.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\PredicateBuilder.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\ReadExpressionCommandExtensions.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\Sql.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\SqlExpression.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\SqlExpression.Join.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\SqlExpressionVisitor.cs" />
+    <Compile Include="ServiceStack.OrmLite\Expressions\WriteExpressionCommandExtensions.cs" />
+    <Compile Include="ServiceStack.OrmLite\FieldDefinition.cs" />
+    <Compile Include="ServiceStack.OrmLite\INamingStrategy.cs" />
+    <Compile Include="ServiceStack.OrmLite\IOrmLiteConverter.cs" />
+    <Compile Include="ServiceStack.OrmLite\IOrmLiteDialectProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite\IPropertyInvoker.cs" />
+    <Compile Include="ServiceStack.OrmLite\IUntypedApi.cs" />
+    <Compile Include="ServiceStack.OrmLite\JoinSqlBuilder.cs" />
+    <Compile Include="ServiceStack.OrmLite\ModelDefinition.cs" />
+    <Compile Include="ServiceStack.OrmLite\NamingStrategy.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteCommand.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteConfig.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteConfigExtensions.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteConnection.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteConnectionFactory.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteContext.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteDialectProviderBase.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteDialectProviderExtensions.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteExecFilter.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteNamingStrategyBase.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLitePersistenceProvider.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteReadApi.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteReadApiAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteReadCommandExtensions.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteReadExpressionsApi.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteReadExpressionsApiAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteResultsFilter.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteResultsFilterExtensions.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteSchemaApi.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteSchemaModifyApi.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteSPStatement.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteTransaction.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteUtils.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteVariables.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteWriteApi.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteWriteApiAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteWriteCommandExtensions.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteWriteExpressionsApi.cs" />
+    <Compile Include="ServiceStack.OrmLite\OrmLiteWriteExpressionsApiAsync.cs" />
+    <Compile Include="ServiceStack.OrmLite\PropertyInvoker.cs" />
+    <Compile Include="ServiceStack.OrmLite\ReflectionPropertyInvoker.cs" />
+    <Compile Include="ServiceStack.OrmLite\SqlBuilder.cs" />
+    <Compile Include="ServiceStack.OrmLite\SqlInValues.cs" />
+    <Compile Include="ServiceStack.OrmLite\Support\LoadList.cs" />
+    <Compile Include="ServiceStack.OrmLite\Support\LoadReferences.cs" />
+    <Compile Include="ServiceStack.OrmLite\UntypedApi.cs" />
+    <Compile Include="ServiceStack.Text\AssemblyUtils.cs" />
+    <Compile Include="ServiceStack.Text\AutoMappingUtils.cs" />
+    <Compile Include="ServiceStack.Text\CharMemoryExtensions.cs" />
+    <Compile Include="ServiceStack.Text\CollectionExtensions.cs" />
+    <Compile Include="ServiceStack.Text\Common\DateTimeSerializer.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeArray.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeBuiltin.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeCollection.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeCustomGenericType.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeDictionary.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeKeyValuePair.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeListWithElements.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeSpecializedCollections.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeType.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeTypeRef.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeTypeRefJson.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeTypeRefJsv.cs" />
+    <Compile Include="ServiceStack.Text\Common\DeserializeTypeUtils.cs" />
+    <Compile Include="ServiceStack.Text\Common\ITypeSerializer.cs" />
+    <Compile Include="ServiceStack.Text\Common\JsDelegates.cs" />
+    <Compile Include="ServiceStack.Text\Common\JsReader.cs" />
+    <Compile Include="ServiceStack.Text\Common\JsState.cs" />
+    <Compile Include="ServiceStack.Text\Common\JsWriter.cs" />
+    <Compile Include="ServiceStack.Text\Common\ParseUtils.cs" />
+    <Compile Include="ServiceStack.Text\Common\StaticParseMethod.cs" />
+    <Compile Include="ServiceStack.Text\Common\WriteDictionary.cs" />
+    <Compile Include="ServiceStack.Text\Common\WriteLists.cs" />
+    <Compile Include="ServiceStack.Text\Common\WriteType.cs" />
+    <Compile Include="ServiceStack.Text\Controller\CommandProcessor.cs" />
+    <Compile Include="ServiceStack.Text\Controller\PathInfo.cs" />
+    <Compile Include="ServiceStack.Text\CsvAttribute.cs" />
+    <Compile Include="ServiceStack.Text\CsvConfig.cs" />
+    <Compile Include="ServiceStack.Text\CsvReader.cs" />
+    <Compile Include="ServiceStack.Text\CsvSerializer.cs" />
+    <Compile Include="ServiceStack.Text\CsvStreamExtensions.cs" />
+    <Compile Include="ServiceStack.Text\CsvWriter.cs" />
+    <Compile Include="ServiceStack.Text\DateTimeExtensions.cs" />
+    <Compile Include="ServiceStack.Text\DirectStreamWriter.cs" />
+    <Compile Include="ServiceStack.Text\DynamicNumber.cs" />
+    <Compile Include="ServiceStack.Text\Env.cs" />
+    <Compile Include="ServiceStack.Text\HttpUtils.cs" />
+    <Compile Include="ServiceStack.Text\IStringSerializer.cs" />
+    <Compile Include="ServiceStack.Text\ITracer.cs" />
+    <Compile Include="ServiceStack.Text\ITypeSerializer.Generic.cs" />
+    <Compile Include="ServiceStack.Text\JsAot.cs" />
+    <Compile Include="ServiceStack.Text\JsConfig.cs" />
+    <Compile Include="ServiceStack.Text\JsConfigScope.cs" />
+    <Compile Include="ServiceStack.Text\JsonObject.cs" />
+    <Compile Include="ServiceStack.Text\JsonSerializer.cs" />
+    <Compile Include="ServiceStack.Text\JsonSerializer.Generic.cs" />
+    <Compile Include="ServiceStack.Text\Json\JsonReader.Generic.cs" />
+    <Compile Include="ServiceStack.Text\Json\JsonTypeSerializer.cs" />
+    <Compile Include="ServiceStack.Text\Json\JsonUtils.cs" />
+    <Compile Include="ServiceStack.Text\Json\JsonWriter.Generic.cs" />
+    <Compile Include="ServiceStack.Text\JsvFormatter.cs" />
+    <Compile Include="ServiceStack.Text\Jsv\JsvDeserializeType.cs" />
+    <Compile Include="ServiceStack.Text\Jsv\JsvReader.Generic.cs" />
+    <Compile Include="ServiceStack.Text\Jsv\JsvSerializer.Generic.cs" />
+    <Compile Include="ServiceStack.Text\Jsv\JsvTypeSerializer.cs" />
+    <Compile Include="ServiceStack.Text\Jsv\JsvWriter.Generic.cs" />
+    <Compile Include="ServiceStack.Text\LicenseUtils.cs" />
+    <Compile Include="ServiceStack.Text\ListExtensions.cs" />
+    <Compile Include="ServiceStack.Text\MapExtensions.cs" />
+    <Compile Include="ServiceStack.Text\Marc\Link.cs" />
+    <Compile Include="ServiceStack.Text\MemoryProvider.cs" />
+    <Compile Include="ServiceStack.Text\NetCoreMemory.cs" />
+    <Compile Include="ServiceStack.Text\ParseAsType.cs" />
+    <Compile Include="ServiceStack.Text\PathUtils.cs" />
+    <Compile Include="ServiceStack.Text\Pcl.Dynamic.cs" />
+    <Compile Include="ServiceStack.Text\PclExport.cs" />
+    <Compile Include="ServiceStack.Text\PclExport.Net40.cs" />
+    <Compile Include="ServiceStack.Text\PclExport.NetStandard.cs" />
+    <Compile Include="ServiceStack.Text\PlatformExtensions.cs" />
+    <Compile Include="ServiceStack.Text\Pools\BufferPool.cs" />
+    <Compile Include="ServiceStack.Text\Pools\CharPool .cs" />
+    <Compile Include="ServiceStack.Text\Pools\ObjectPool.cs" />
+    <Compile Include="ServiceStack.Text\Pools\PooledObject.cs" />
+    <Compile Include="ServiceStack.Text\Pools\SharedPoolExtensions.cs" />
+    <Compile Include="ServiceStack.Text\Pools\SharedPools.cs" />
+    <Compile Include="ServiceStack.Text\Pools\StringBuilderPool.cs" />
+    <Compile Include="ServiceStack.Text\QueryStringSerializer.cs" />
+    <Compile Include="ServiceStack.Text\RecyclableMemoryStream.cs" />
+    <Compile Include="ServiceStack.Text\ReflectionExtensions.cs" />
+    <Compile Include="ServiceStack.Text\RuntimeSerializableAttribute.cs" />
+    <Compile Include="ServiceStack.Text\StreamExtensions.cs" />
+    <Compile Include="ServiceStack.Text\StringBuilderCache.cs" />
+    <Compile Include="ServiceStack.Text\StringExtensions.cs" />
+    <Compile Include="ServiceStack.Text\StringSpanExtensions.cs" />
+    <Compile Include="ServiceStack.Text\StringWriterCache.cs" />
+    <Compile Include="ServiceStack.Text\Support\AssemblyTypeDefinition.cs" />
+    <Compile Include="ServiceStack.Text\Support\DoubleConverter.cs" />
+    <Compile Include="ServiceStack.Text\Support\TimeSpanConverter.cs" />
+    <Compile Include="ServiceStack.Text\Support\TypePair.cs" />
+    <Compile Include="ServiceStack.Text\SystemTime.cs" />
+    <Compile Include="ServiceStack.Text\TaskExtensions.cs" />
+    <Compile Include="ServiceStack.Text\TaskResult.cs" />
+    <Compile Include="ServiceStack.Text\TaskUtils.cs" />
+    <Compile Include="ServiceStack.Text\TextExtensions.cs" />
+    <Compile Include="ServiceStack.Text\Tracer.cs" />
+    <Compile Include="ServiceStack.Text\TranslateListWithElements.cs" />
+    <Compile Include="ServiceStack.Text\TypeAccessor.cs" />
+    <Compile Include="ServiceStack.Text\TypeConfig.cs" />
+    <Compile Include="ServiceStack.Text\TypeConstants.cs" />
+    <Compile Include="ServiceStack.Text\TypeFields.cs" />
+    <Compile Include="ServiceStack.Text\TypeProperties.cs" />
+    <Compile Include="ServiceStack.Text\TypeSerializer.cs" />
+    <Compile Include="ServiceStack.Text\TypeSerializer.Generic.cs" />
+    <Compile Include="ServiceStack.Text\XmlSerializer.cs" />
+    <Compile Include="ServiceStack\AddHeaderAttribute.cs" />
+    <Compile Include="ServiceStack\Admin\RequestLogsService.cs" />
+    <Compile Include="ServiceStack\AppHostBase.cs" />
+    <Compile Include="ServiceStack\AppHostExtensions.cs" />
+    <Compile Include="ServiceStack\AppHostHttpListenerBase.cs" />
+    <Compile Include="ServiceStack\AppHostHttpListenerPoolBase.cs" />
+    <Compile Include="ServiceStack\AppHostHttpListenerSmartPoolBase.cs" />
+    <Compile Include="ServiceStack\ApplyTo.cs" />
+    <Compile Include="ServiceStack\AppSelfHostBase.cs" />
+    <Compile Include="ServiceStack\AspNet\ServiceStackPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceStack\AsyncExtensions.cs" />
+    <Compile Include="ServiceStack\AuthenticateAttribute.cs" />
+    <Compile Include="ServiceStack\AuthFeature.cs" />
+    <Compile Include="ServiceStack\AuthUserSession.cs" />
+    <Compile Include="ServiceStack\Auth\AspNetWindowsAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\AssignRolesService.cs" />
+    <Compile Include="ServiceStack\Auth\AuthenticateService.cs" />
+    <Compile Include="ServiceStack\Auth\AuthEvents.cs" />
+    <Compile Include="ServiceStack\Auth\AuthMetadataProvider.cs" />
+    <Compile Include="ServiceStack\Auth\AuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\BasicAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\CredentialsAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\DigestAuthFunctions.cs" />
+    <Compile Include="ServiceStack\Auth\DigestAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\FacebookAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\GithubAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\IAuthHttpGateway.cs" />
+    <Compile Include="ServiceStack\Auth\IAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\IAuthRepository.cs" />
+    <Compile Include="ServiceStack\Auth\IAuthSession.cs" />
+    <Compile Include="ServiceStack\Auth\IAuthTokens.cs" />
+    <Compile Include="ServiceStack\Auth\InMemoryAuthRepository.cs" />
+    <Compile Include="ServiceStack\Auth\IRedisClientFacade.cs" />
+    <Compile Include="ServiceStack\Auth\OAuthAuthorizer.cs" />
+    <Compile Include="ServiceStack\Auth\OAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\OdnoklassnikiAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\RedisAuthRepository.cs" />
+    <Compile Include="ServiceStack\Auth\RegisterService.cs" />
+    <Compile Include="ServiceStack\Auth\SaltedHash.cs" />
+    <Compile Include="ServiceStack\Auth\SocialExtensions.cs" />
+    <Compile Include="ServiceStack\Auth\TwitterAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\UnAssignRolesService.cs" />
+    <Compile Include="ServiceStack\Auth\UserAuth.cs" />
+    <Compile Include="ServiceStack\Auth\UserAuthRepositoryExtensions.cs" />
+    <Compile Include="ServiceStack\Auth\VkAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\YammerAuthProvider.cs" />
+    <Compile Include="ServiceStack\Auth\YandexAuthProvider.cs" />
+    <Compile Include="ServiceStack\CacheClientExtensions.cs" />
+    <Compile Include="ServiceStack\Caching\MemoryCacheClient.cs" />
+    <Compile Include="ServiceStack\Caching\MultiCacheClient.cs" />
+    <Compile Include="ServiceStack\CancellableRequestsFeature.cs" />
+    <Compile Include="ServiceStack\ClientCanSwapTemplatesAttribute.cs" />
+    <Compile Include="ServiceStack\CompressedFileResult.cs" />
+    <Compile Include="ServiceStack\CompressedResult.cs" />
+    <Compile Include="ServiceStack\Configuration\AppSettings.cs" />
+    <Compile Include="ServiceStack\Configuration\AppSettingsBase.cs" />
+    <Compile Include="ServiceStack\Configuration\Config.cs" />
+    <Compile Include="ServiceStack\Configuration\ConfigUtils.cs" />
+    <Compile Include="ServiceStack\Configuration\DictionarySettings.cs" />
+    <Compile Include="ServiceStack\Configuration\EnvironmentVariableSettings.cs" />
+    <Compile Include="ServiceStack\Configuration\ISettings.cs" />
+    <Compile Include="ServiceStack\Configuration\MultiAppSettings.cs" />
+    <Compile Include="ServiceStack\Configuration\RoleNames.cs" />
+    <Compile Include="ServiceStack\Configuration\TextFileSettings.cs" />
+    <Compile Include="ServiceStack\ConnectionInfo.cs" />
+    <Compile Include="ServiceStack\ConnectionInfoAttribute.cs" />
+    <Compile Include="ServiceStack\ContainerTypeExtensions.cs" />
+    <Compile Include="ServiceStack\CorsFeature.cs" />
+    <Compile Include="ServiceStack\DefaultRequestAttribute.cs" />
+    <Compile Include="ServiceStack\DefaultViewAttribute.cs" />
+    <Compile Include="ServiceStack\DtoUtils.cs" />
+    <Compile Include="ServiceStack\EnableCorsAttribute.cs" />
+    <Compile Include="ServiceStack\EncryptedMessagesFeature.cs" />
+    <Compile Include="ServiceStack\EnsureHttpsAttribute.cs" />
+    <Compile Include="ServiceStack\FileExtensions.cs" />
+    <Compile Include="ServiceStack\FluentValidation\AbstractValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\AssemblyScanner.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Attributes\AttributedValidatorFactory.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Attributes\ValidatorAttribute.cs" />
+    <Compile Include="ServiceStack\FluentValidation\CollectionValidatorExtensions.cs" />
+    <Compile Include="ServiceStack\FluentValidation\DefaultValidatorExtensions.cs" />
+    <Compile Include="ServiceStack\FluentValidation\DefaultValidatorOptions.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Enums.cs" />
+    <Compile Include="ServiceStack\FluentValidation\InlineValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\CollectionPropertyRule.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\DefaultValidatorSelector.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\DelegateValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\Extensions.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\IConfigurable.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\IFluentInterface.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\InstanceCache.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\IValidatorSelector.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\MemberNameValidatorSelector.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\MessageFormatter.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\PropertyChain.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\PropertyRule.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\RuleBuilder.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\RulesetValidatorSelector.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Internal\TrackingCollection.cs" />
+    <Compile Include="ServiceStack\FluentValidation\IValidationRule.cs" />
+    <Compile Include="ServiceStack\FluentValidation\IValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\IValidatorDescriptor.cs" />
+    <Compile Include="ServiceStack\FluentValidation\IValidatorFactory.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Resources\IResourceAccessorBuilder.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Resources\IStringSource.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Resources\LocalizedStringSource.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Resources\Messages.Designer.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Resources\StaticStringSource.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Results\ValidationFailure.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Results\ValidationResult.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Syntax.cs" />
+    <Compile Include="ServiceStack\FluentValidation\TestHelper\ValidationTestException.cs" />
+    <Compile Include="ServiceStack\FluentValidation\TestHelper\ValidatorTester.cs" />
+    <Compile Include="ServiceStack\FluentValidation\TestHelper\ValidatorTestExtensions.cs" />
+    <Compile Include="ServiceStack\FluentValidation\ValidationContext.cs" />
+    <Compile Include="ServiceStack\FluentValidation\ValidationErrors.cs" />
+    <Compile Include="ServiceStack\FluentValidation\ValidationException.cs" />
+    <Compile Include="ServiceStack\FluentValidation\ValidatorDescriptor.cs" />
+    <Compile Include="ServiceStack\FluentValidation\ValidatorFactoryBase.cs" />
+    <Compile Include="ServiceStack\FluentValidation\ValidatorOptions.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\AbstractComparisonValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\ChildCollectionValidatorAdaptor.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\ChildValidatorAdaptor.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\CreditCardValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\DelegatingValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\EmailValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\EqualValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\ExclusiveBetweenValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\GreaterThanOrEqualValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\GreaterThanValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\InclusiveBetweenValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\IPropertyValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\LengthValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\LessThanOrEqualValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\LessThanValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\NoopPropertyValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\NotEmptyValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\NotEqualValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\NotNullValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\PredicateValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\PropertyValidator.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\PropertyValidatorContext.cs" />
+    <Compile Include="ServiceStack\FluentValidation\Validators\RegularExpressionValidator.cs" />
+    <Compile Include="ServiceStack\Formats\CsvFormat.cs" />
+    <Compile Include="ServiceStack\Formats\HtmlFormat.cs" />
+    <Compile Include="ServiceStack\Formats\MarkdownFormat.cs" />
+    <Compile Include="ServiceStack\Funq\Action.cs" />
+    <Compile Include="ServiceStack\Funq\Container.Adapter.cs" />
+    <Compile Include="ServiceStack\Funq\Container.cs" />
+    <Compile Include="ServiceStack\Funq\Container.Overloads.cs" />
+    <Compile Include="ServiceStack\Funq\Func.cs" />
+    <Compile Include="ServiceStack\Funq\IFluentInterface.cs" />
+    <Compile Include="ServiceStack\Funq\IFunqlet.cs" />
+    <Compile Include="ServiceStack\Funq\Owner.cs" />
+    <Compile Include="ServiceStack\Funq\ResolutionException.cs" />
+    <Compile Include="ServiceStack\Funq\ReuseScope.cs" />
+    <Compile Include="ServiceStack\Funq\ServiceEntry.cs" />
+    <Compile Include="ServiceStack\Funq\ServiceEntry.Generic.cs" />
+    <Compile Include="ServiceStack\Funq\ServiceKey.cs" />
+    <Compile Include="ServiceStack\Funq\Syntax.cs" />
+    <Compile Include="ServiceStack\HostConfig.cs" />
+    <Compile Include="ServiceStack\HostContext.cs" />
+    <Compile Include="ServiceStack\Host\ActionContext.cs" />
+    <Compile Include="ServiceStack\Host\AppDelegates.cs" />
+    <Compile Include="ServiceStack\Host\AspNet\AspNetRequest.cs" />
+    <Compile Include="ServiceStack\Host\AspNet\AspNetResponse.cs" />
+    <Compile Include="ServiceStack\Host\BasicRequest.cs" />
+    <Compile Include="ServiceStack\Host\BasicResponse.cs" />
+    <Compile Include="ServiceStack\Host\ContainerResolveCache.cs" />
+    <Compile Include="ServiceStack\Host\ContentTypes.cs" />
+    <Compile Include="ServiceStack\Host\Cookies.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\CustomActionHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\CustomResponseHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\ForbiddenHttpHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\GenericHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\HttpAsyncTaskHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\IndexPageHttpHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\IServiceStackHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\JsonReplyHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\JsvReplyHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\NotFoundHttpHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\RedirectHttpHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\RequestInfoHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\ServiceStackHandlerBase.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\Soap11Handlers.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\Soap12Handlers.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\SoapHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\StaticContentHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\StaticFileHandler.cs" />
+    <Compile Include="ServiceStack\Host\Handlers\XmlReplyHandler.cs" />
+    <Compile Include="ServiceStack\Host\HttpFile.cs" />
+    <Compile Include="ServiceStack\Host\HttpListener\HttpListenerBase.cs" />
+    <Compile Include="ServiceStack\Host\HttpListener\ListenerRequest.cs" />
+    <Compile Include="ServiceStack\Host\HttpListener\ListenerRequest.Mono.cs" />
+    <Compile Include="ServiceStack\Host\HttpListener\ListenerResponse.cs" />
+    <Compile Include="ServiceStack\Host\HttpRequestAuthentication.cs" />
+    <Compile Include="ServiceStack\Host\HttpResponseStreamWrapper.cs" />
+    <Compile Include="ServiceStack\Host\HttpWebRequestConfig.cs" />
+    <Compile Include="ServiceStack\Host\InMemoryRollingRequestLogger.cs" />
+    <Compile Include="ServiceStack\Host\RequestBaseWrapper.cs" />
+    <Compile Include="ServiceStack\Host\RequestPreferences.cs" />
+    <Compile Include="ServiceStack\Host\RestHandler.cs" />
+    <Compile Include="ServiceStack\Host\RestPath.cs" />
+    <Compile Include="ServiceStack\Host\RouteNamingConvention.cs" />
+    <Compile Include="ServiceStack\Host\ServiceController.cs" />
+    <Compile Include="ServiceStack\Host\ServiceExec.cs" />
+    <Compile Include="ServiceStack\Host\ServiceMetadata.cs" />
+    <Compile Include="ServiceStack\Host\ServiceRoutes.cs" />
+    <Compile Include="ServiceStack\Host\ServiceRunner.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\AntiForgery.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\AntiForgeryConfig.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\AntiForgeryConfigWrapper.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\AntiForgeryToken.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\AntiForgeryTokenSerializer.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\AntiForgeryTokenStore.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\AntiForgeryWorker.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\BinaryBlob.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\ClaimUidExtractor.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\HttpAntiForgeryException.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\IAntiForderyConfig.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\IAntiForgeryAdditionalDataProvider.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\IAntiForgeryTokenSerializer.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\IClaimUidExtractor.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\ICryptoSystem.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\ITokenStore.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\ITokenValidator.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\MachineKey45CryptoSystem.cs" />
+    <Compile Include="ServiceStack\Html\AntiXsrf\TokenValidator.cs" />
+    <Compile Include="ServiceStack\Html\CachedExpressionCompiler.cs" />
+    <Compile Include="ServiceStack\Html\Claims\Claim.cs" />
+    <Compile Include="ServiceStack\Html\Claims\ClaimsIdentity.cs" />
+    <Compile Include="ServiceStack\Html\Claims\ClaimsIdentityConverter.cs" />
+    <Compile Include="ServiceStack\Html\DisplayTextExtensions.cs" />
+    <Compile Include="ServiceStack\Html\DynamicTypeGenerator.cs" />
+    <Compile Include="ServiceStack\Html\DynamicViewDataDictionary.cs" />
+    <Compile Include="ServiceStack\Html\EmptyModelMetadataProvider.cs" />
+    <Compile Include="ServiceStack\Html\Error.cs" />
+    <Compile Include="ServiceStack\Html\ExpressionHelper.cs" />
+    <Compile Include="ServiceStack\Html\FieldValidationMetadata.cs" />
+    <Compile Include="ServiceStack\Html\FormContext.cs" />
+    <Compile Include="ServiceStack\Html\FormMethod.cs" />
+    <Compile Include="ServiceStack\Html\HtmlExtensions.cs" />
+    <Compile Include="ServiceStack\Html\HtmlHelper.cs" />
+    <Compile Include="ServiceStack\Html\HtmlHelper`1.cs" />
+    <Compile Include="ServiceStack\Html\HttpVerbs.cs" />
+    <Compile Include="ServiceStack\Html\InputExtensions.cs" />
+    <Compile Include="ServiceStack\Html\InputType.cs" />
+    <Compile Include="ServiceStack\Html\IRazorView.cs" />
+    <Compile Include="ServiceStack\Html\ITemplatePage.cs" />
+    <Compile Include="ServiceStack\Html\IViewDataContainer.cs" />
+    <Compile Include="ServiceStack\Html\IViewEngine.cs" />
+    <Compile Include="ServiceStack\Html\IViewPage.cs" />
+    <Compile Include="ServiceStack\Html\LabelExtensions.cs" />
+    <Compile Include="ServiceStack\Html\Minifiers.cs" />
+    <Compile Include="ServiceStack\Html\Minifiers.css.cs" />
+    <Compile Include="ServiceStack\Html\Minifiers.html.cs" />
+    <Compile Include="ServiceStack\Html\Minifiers.js.cs" />
+    <Compile Include="ServiceStack\Html\ModelClientValidationRule.cs" />
+    <Compile Include="ServiceStack\Html\ModelError.cs" />
+    <Compile Include="ServiceStack\Html\ModelErrorCollection.cs" />
+    <Compile Include="ServiceStack\Html\ModelMetadata.cs" />
+    <Compile Include="ServiceStack\Html\ModelMetadataProvider.cs" />
+    <Compile Include="ServiceStack\Html\ModelMetadataProviders.cs" />
+    <Compile Include="ServiceStack\Html\ModelState.cs" />
+    <Compile Include="ServiceStack\Html\ModelStateDictionary.cs" />
+    <Compile Include="ServiceStack\Html\MultiSelectList.cs" />
+    <Compile Include="ServiceStack\Html\MvcHtmlString.cs" />
+    <Compile Include="ServiceStack\Html\MvcResources.cs" />
+    <Compile Include="ServiceStack\Html\PocoMetadataProvider.cs" />
+    <Compile Include="ServiceStack\Html\RouteValueDictionary.cs" />
+    <Compile Include="ServiceStack\Html\ScopeStorage.cs" />
+    <Compile Include="ServiceStack\Html\SelectExtensions.cs" />
+    <Compile Include="ServiceStack\Html\SelectList.cs" />
+    <Compile Include="ServiceStack\Html\SelectListItem.cs" />
+    <Compile Include="ServiceStack\Html\TagBuilder.cs" />
+    <Compile Include="ServiceStack\Html\TagRenderMode.cs" />
+    <Compile Include="ServiceStack\Html\TemplateInfo.cs" />
+    <Compile Include="ServiceStack\Html\TemplateProvider.cs" />
+    <Compile Include="ServiceStack\Html\TextAreaExtensions.cs" />
+    <Compile Include="ServiceStack\Html\TypeHelpers.cs" />
+    <Compile Include="ServiceStack\Html\UnobtrusiveValidationAttributesGenerator.cs" />
+    <Compile Include="ServiceStack\Html\UrlHelper.cs" />
+    <Compile Include="ServiceStack\Html\ValidationExtensions.cs" />
+    <Compile Include="ServiceStack\Html\ValueProviderResult.cs" />
+    <Compile Include="ServiceStack\Html\ViewContext.cs" />
+    <Compile Include="ServiceStack\Html\ViewDataDictionary.cs" />
+    <Compile Include="ServiceStack\Html\ViewDataDictionary`1.cs" />
+    <Compile Include="ServiceStack\Html\ViewDataInfo.cs" />
+    <Compile Include="ServiceStack\HttpCacheFeature.cs" />
+    <Compile Include="ServiceStack\HttpError.cs" />
+    <Compile Include="ServiceStack\HttpExtensions.cs" />
+    <Compile Include="ServiceStack\HttpHandlerFactory.cs" />
+    <Compile Include="ServiceStack\HttpRequestExtensions.cs" />
+    <Compile Include="ServiceStack\HttpResponseExtensions.cs" />
+    <Compile Include="ServiceStack\HttpResponseExtensionsInternal.cs" />
+    <Compile Include="ServiceStack\HttpResult.cs" />
+    <Compile Include="ServiceStack\HttpResultUtils.cs" />
+    <Compile Include="ServiceStack\IAppHost.cs" />
+    <Compile Include="ServiceStack\ILogic.cs" />
+    <Compile Include="ServiceStack\IPlugin.cs" />
+    <Compile Include="ServiceStack\IRequiresSoapMessage.cs" />
+    <Compile Include="ServiceStack\IServiceBase.cs" />
+    <Compile Include="ServiceStack\LocalizedStrings.cs" />
+    <Compile Include="ServiceStack\Markdown\MarkdownViewBase.cs" />
+    <Compile Include="ServiceStack\Messaging\IMessageHandlerDisposer.cs" />
+    <Compile Include="ServiceStack\Messaging\IMessageHandlerFactory.cs" />
+    <Compile Include="ServiceStack\Messaging\InMemoryTransientMessageFactory.cs" />
+    <Compile Include="ServiceStack\Messaging\InMemoryTransientMessageService.cs" />
+    <Compile Include="ServiceStack\Messaging\MessageHandler.cs" />
+    <Compile Include="ServiceStack\Messaging\MessageHandlerFactory.cs" />
+    <Compile Include="ServiceStack\Messaging\TransientMessageServiceBase.cs" />
+    <Compile Include="ServiceStack\Messaging\WorkerStatus.cs" />
+    <Compile Include="ServiceStack\MetadataFeature.cs" />
+    <Compile Include="ServiceStack\Metadata\BaseMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\BaseSoapMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\BaseWsdlPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceStack\Metadata\CustomMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\IndexMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\IndexOperationsControl.cs" />
+    <Compile Include="ServiceStack\Metadata\JsonMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\JsvMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\ListTemplate.cs" />
+    <Compile Include="ServiceStack\Metadata\MetadataConfig.cs" />
+    <Compile Include="ServiceStack\Metadata\MetadataPagesConfig.cs" />
+    <Compile Include="ServiceStack\Metadata\OperationControl.cs" />
+    <Compile Include="ServiceStack\Metadata\ServiceEndpointsMetadataConfig.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap11MetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap11OperationControl.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap11WsdlMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap11WsdlTemplate.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap12MetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap12OperationControl.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap12WsdlMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\Soap12WsdlTemplate.cs" />
+    <Compile Include="ServiceStack\Metadata\SoapMetadataConfig.cs" />
+    <Compile Include="ServiceStack\Metadata\TableTemplate.cs" />
+    <Compile Include="ServiceStack\Metadata\WsdlMetadataHandlerBase.cs" />
+    <Compile Include="ServiceStack\Metadata\WsdlTemplateBase.cs" />
+    <Compile Include="ServiceStack\Metadata\XmlMetadataHandler.cs" />
+    <Compile Include="ServiceStack\Metadata\XsdGenerator.cs" />
+    <Compile Include="ServiceStack\Metadata\XsdTypeNames.cs" />
+    <Compile Include="ServiceStack\Metadata\XsdTypes.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\BaseProfilerProvider.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Data\ExecuteType.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Data\IDbProfiler.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Data\Link.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Data\ProfiledDbCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServiceStack\MiniProfiler\Data\ProfiledDbConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServiceStack\MiniProfiler\Data\ProfiledDbDataReader.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Data\ProfiledDbProviderFactory.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Data\ProfiledDbTransaction.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Helpers\ExtensionMethods.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Helpers\HaackFormatter.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Helpers\IStopwatch.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Helpers\StackTraceSnippet.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\HtmlString.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\IpAddressProvider.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\IProfilerProvider.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\IUserProvider.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\MiniProfiler.IDbProfiler.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\MiniProfiler.Settings.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Profiler.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\SqlFormatters\InlineFormatter.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\SqlFormatters\ISqlFormatter.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\SqlFormatters\OracleFormatter.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\SqlFormatters\SqlServerFormatter.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\SqlProfiler.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\SqlTiming.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\SqlTimingParameter.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Storage\DatabaseStorageBase.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Storage\HttpRuntimeCacheStorage.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Storage\IStorage.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\Timing.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\UI\MiniProfilerHandler.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\WebRequestProfilerProvider.cs" />
+    <Compile Include="ServiceStack\MiniProfiler\WebRequestProfilerProvider.Settings.cs" />
+    <Compile Include="ServiceStack\MqExtensions.cs" />
+    <Compile Include="ServiceStack\NativeTypesFeature.cs" />
+    <Compile Include="ServiceStack\NativeTypes\CSharp\CSharpGenerator.cs" />
+    <Compile Include="ServiceStack\NativeTypes\FSharp\FSharpGenerator.cs" />
+    <Compile Include="ServiceStack\NativeTypes\Java\JavaGenerator.cs" />
+    <Compile Include="ServiceStack\NativeTypes\Kotlin\KotlinGenerator.cs" />
+    <Compile Include="ServiceStack\NativeTypes\NativeTypesMetadata.cs" />
+    <Compile Include="ServiceStack\NativeTypes\NativeTypesService.cs" />
+    <Compile Include="ServiceStack\NativeTypes\StringBuilderWrapper.cs" />
+    <Compile Include="ServiceStack\NativeTypes\Swift\SwiftGenerator.cs" />
+    <Compile Include="ServiceStack\NativeTypes\TypeScript\TypeScriptGenerator.cs" />
+    <Compile Include="ServiceStack\NativeTypes\VbNet\VbNetGenerator.cs" />
+    <Compile Include="ServiceStack\PostmanFeature.cs" />
+    <Compile Include="ServiceStack\PredefinedRoutesFeature.cs" />
+    <Compile Include="ServiceStack\RedisErrorLoggerFeature.cs" />
+    <Compile Include="ServiceStack\RegistrationFeature.cs" />
+    <Compile Include="ServiceStack\RequestContext.cs" />
+    <Compile Include="ServiceStack\RequestExtensions.cs" />
+    <Compile Include="ServiceStack\RequestFilterAttribute.cs" />
+    <Compile Include="ServiceStack\RequestInfoFeature.cs" />
+    <Compile Include="ServiceStack\RequestLogsFeature.cs" />
+    <Compile Include="ServiceStack\RequiredPermissionAttribute.cs" />
+    <Compile Include="ServiceStack\RequiredRoleAttribute.cs" />
+    <Compile Include="ServiceStack\RequiresAnyPermission.cs" />
+    <Compile Include="ServiceStack\RequiresAnyRoleAttribute.cs" />
+    <Compile Include="ServiceStack\RequiresSchemaProviders.cs" />
+    <Compile Include="ServiceStack\ResponseFilterAttribute.cs" />
+    <Compile Include="ServiceStack\ServerEventsFeature.cs" />
+    <Compile Include="ServiceStack\Service.cs" />
+    <Compile Include="ServiceStack\ServiceExtensions.cs" />
+    <Compile Include="ServiceStack\ServiceResponseException.cs" />
+    <Compile Include="ServiceStack\ServiceRoutesExtensions.cs" />
+    <Compile Include="ServiceStack\ServiceStackHost.cs" />
+    <Compile Include="ServiceStack\ServiceStackHost.Runtime.cs" />
+    <Compile Include="ServiceStack\ServiceStackHttpHandler.cs" />
+    <Compile Include="ServiceStack\ServiceStackProvider.cs" />
+    <Compile Include="ServiceStack\SessionExtensions.cs" />
+    <Compile Include="ServiceStack\SessionFactory.cs" />
+    <Compile Include="ServiceStack\SessionFeature.cs" />
+    <Compile Include="ServiceStack\SetStatusAttribute.cs" />
+    <Compile Include="ServiceStack\SitemapFeature.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\CallerThreadContext.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\CanceledWorkItemsGroup.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\EventWaitHandle.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\EventWaitHandleFactory.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\Exceptions.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\Interfaces.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\InternalInterfaces.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\PriorityQueue.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\SLExt.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\SmartThreadPool.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\SmartThreadPool.ThreadEntry.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\STPEventWaitHandle.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\STPPerformanceCounter.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\STPStartInfo.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\SynchronizedDictionary.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WIGStartInfo.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItem.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItem.WorkItemResult.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItemFactory.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItemInfo.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItemResultTWrapper.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItemsGroup.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItemsGroupBase.cs" />
+    <Compile Include="ServiceStack\SmartThreadPool\WorkItemsQueue.cs" />
+    <Compile Include="ServiceStack\StopExecutionException.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\Abbreviation.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\Block.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\BlockProcessor.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\FootnoteReference.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\HtmlTag.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\LinkDefinition.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\LinkInfo.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\MardownDeep.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\SpanFormatter.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\StringScanner.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\TableSpec.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\Token.cs" />
+    <Compile Include="ServiceStack\Support\MarkdownDeep\Utils.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\DataBinder.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\Evaluator.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\ITemplateWriter.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\Markdown.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\MarkdownHandler.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\MarkdownPage.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\MarkdownTemplate.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\TemplateExtensions.cs" />
+    <Compile Include="ServiceStack\Support\Markdown\TextBlock.cs" />
+    <Compile Include="ServiceStack\Support\WebHost\FilterAttributeCache.cs" />
+    <Compile Include="ServiceStack\Support\WebHost\GzipOptimizationTest.cs" />
+    <Compile Include="ServiceStack\Support\WebHost\HttpHandlerBase.cs" />
+    <Compile Include="ServiceStack\SuppressFormsAuthenticationRedirectModule.cs" />
+    <Compile Include="ServiceStack\TaskExt.cs" />
+    <Compile Include="ServiceStack\Templates\HtmlTemplates.cs" />
+    <Compile Include="ServiceStack\Testing\BasicAppHost.cs" />
+    <Compile Include="ServiceStack\Testing\BasicResolver.cs" />
+    <Compile Include="ServiceStack\Testing\MockHttpRequest.cs" />
+    <Compile Include="ServiceStack\Testing\MockHttpResponse.cs" />
+    <Compile Include="ServiceStack\Testing\MockRestGateway.cs" />
+    <Compile Include="ServiceStack\ValidationResultExtensions.cs" />
+    <Compile Include="ServiceStack\Validation\ExecOnlyOnce.cs" />
+    <Compile Include="ServiceStack\Validation\MultiRuleSetValidatorSelector.cs" />
+    <Compile Include="ServiceStack\Validation\ValidationFeature.cs" />
+    <Compile Include="ServiceStack\Validation\ValidationFilters.cs" />
+    <Compile Include="ServiceStack\Validation\ValidatorCache.cs" />
+    <Compile Include="ServiceStack\VirtualPathExtensions.cs" />
+    <Compile Include="ServiceStack\VirtualPath\AbstractVirtualDirectoryBase.cs" />
+    <Compile Include="ServiceStack\VirtualPath\AbstractVirtualFileBase.cs" />
+    <Compile Include="ServiceStack\VirtualPath\AbstractVirtualPathProviderBase.cs" />
+    <Compile Include="ServiceStack\VirtualPath\FileSystemVirtualDirectory.cs" />
+    <Compile Include="ServiceStack\VirtualPath\FileSystemVirtualFile.cs" />
+    <Compile Include="ServiceStack\VirtualPath\FileSystemVirtualPathProvider.cs" />
+    <Compile Include="ServiceStack\VirtualPath\InMemoryVirtualPathProvider.cs" />
+    <Compile Include="ServiceStack\VirtualPath\MultiVirtualPathProvider.cs" />
+    <Compile Include="ServiceStack\VirtualPath\ResourceVirtualDirectory.cs" />
+    <Compile Include="ServiceStack\VirtualPath\ResourceVirtualFile.cs" />
+    <Compile Include="ServiceStack\VirtualPath\ResourceVirtualPathProvider.cs" />
+    <Compile Include="ServiceStack\VirtualPath\VirtualPathProviderExtensions.cs" />
+    <Compile Include="ServiceStack\WebSudoFeature.cs" />
+    <Compile Include="ServiceStack\WebSudoRequiredAttribute.cs" />
+    <Compile Include="ServiceStack\XsdUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceStack\FluentValidation\Resources\Messages.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ServiceStack.Interfaces\Redis\Redis.cd" />
+    <None Include="ServiceStack.OrmLite\Async\OrmLiteAsyncApi.cd" />
+    <None Include="ServiceStack.OrmLite\OrmLiteApi.cd" />
+    <None Include="ServiceStack\Funq\Container.xdoc" />
+    <None Include="ServiceStack\MiniProfiler\UI\includes.tmpl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System.Data.SQLite.dll" />
+    <None Include="Resources\Npgsql.dll" />
+    <None Include="Resources\MySql.Data.dll" />
+    <None Include="Resources\Mono.Security.dll" />
+    <None Include="Resources\DDTek.Oracle.dll" />
+    <None Include="Resources\System.Memory.dll" />
+    <Content Include="ServiceStack.Interfaces\Redis\Redis-annotated.png" />
+    <Content Include="ServiceStack.Interfaces\Redis\Redis.png" />
+    <Content Include="ServiceStack.Text\ServiceStack.Text.csproj" />
+    <Content Include="ServiceStack.Text\ServiceStack.Text.csproj.user" />
+    <Content Include="ServiceStack\Funq\License.txt" />
+    <Content Include="ServiceStack\js\ss-utils.js" />
+    <Content Include="ServiceStack\MiniProfiler\UI\includes.css" />
+    <Content Include="ServiceStack\MiniProfiler\UI\includes.js" />
+    <Content Include="ServiceStack\MiniProfiler\UI\jquip.all.js" />
+    <Content Include="ServiceStack\Templates\HtmlFormat.html" />
+    <Content Include="ServiceStack\Templates\IndexOperations.html" />
+    <Content Include="ServiceStack\Templates\OperationControl.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="ServiceStack\js\ss-utils.d.ts" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

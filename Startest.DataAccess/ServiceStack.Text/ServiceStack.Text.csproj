@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6A75D9F-67BD-4A15-B5B4-21444230FFAF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceStack.Text</RootNamespace>
+    <AssemblyName>ServiceStack.Text</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET45;NET45</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1701;1702;1705</NoWarn>
+    <LangVersion>7.2</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET45;NET45</DefineConstants>
+    <NoWarn>1701;1702;1705</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\ReferenceBin\Startest\</OutputPath>
+    <DefineConstants>TRACE;NET45;RELEASE;NET45</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.2</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>1701;1702;1705</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers">
+      <HintPath>..\..\..\SmallTarget\ReferenceBin\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Memory">
+      <HintPath>..\..\..\SmallTarget\ReferenceBin\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\..\SmallTarget\ReferenceBin\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Threading" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyUtils.cs" />
+    <Compile Include="AutoMappingUtils.cs" />
+    <Compile Include="CharMemoryExtensions.cs" />
+    <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="Common\DateTimeSerializer.cs" />
+    <Compile Include="Common\DeserializeArray.cs" />
+    <Compile Include="Common\DeserializeBuiltin.cs" />
+    <Compile Include="Common\DeserializeCollection.cs" />
+    <Compile Include="Common\DeserializeCustomGenericType.cs" />
+    <Compile Include="Common\DeserializeDictionary.cs" />
+    <Compile Include="Common\DeserializeKeyValuePair.cs" />
+    <Compile Include="Common\DeserializeListWithElements.cs" />
+    <Compile Include="Common\DeserializeSpecializedCollections.cs" />
+    <Compile Include="Common\DeserializeType.cs" />
+    <Compile Include="Common\DeserializeTypeRef.cs" />
+    <Compile Include="Common\DeserializeTypeRefJson.cs" />
+    <Compile Include="Common\DeserializeTypeRefJsv.cs" />
+    <Compile Include="Common\DeserializeTypeUtils.cs" />
+    <Compile Include="Common\ITypeSerializer.cs" />
+    <Compile Include="Common\JsDelegates.cs" />
+    <Compile Include="Common\JsReader.cs" />
+    <Compile Include="Common\JsState.cs" />
+    <Compile Include="Common\JsWriter.cs" />
+    <Compile Include="Common\ParseUtils.cs" />
+    <Compile Include="Common\StaticParseMethod.cs" />
+    <Compile Include="Common\WriteDictionary.cs" />
+    <Compile Include="Common\WriteLists.cs" />
+    <Compile Include="Common\WriteType.cs" />
+    <Compile Include="Controller\CommandProcessor.cs" />
+    <Compile Include="Controller\PathInfo.cs" />
+    <Compile Include="CsvAttribute.cs" />
+    <Compile Include="CsvConfig.cs" />
+    <Compile Include="CsvReader.cs" />
+    <Compile Include="CsvSerializer.cs" />
+    <Compile Include="CsvStreamExtensions.cs" />
+    <Compile Include="CsvWriter.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="DirectStreamWriter.cs" />
+    <Compile Include="DynamicNumber.cs" />
+    <Compile Include="Env.cs" />
+    <Compile Include="HttpUtils.cs" />
+    <Compile Include="IStringSerializer.cs" />
+    <Compile Include="ITracer.cs" />
+    <Compile Include="ITypeSerializer.Generic.cs" />
+    <Compile Include="JsAot.cs" />
+    <Compile Include="JsConfig.cs" />
+    <Compile Include="JsConfigScope.cs" />
+    <Compile Include="JsonObject.cs" />
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="JsonSerializer.Generic.cs" />
+    <Compile Include="Json\JsonReader.Generic.cs" />
+    <Compile Include="Json\JsonTypeSerializer.cs" />
+    <Compile Include="Json\JsonUtils.cs" />
+    <Compile Include="Json\JsonWriter.Generic.cs" />
+    <Compile Include="JsvFormatter.cs" />
+    <Compile Include="Jsv\JsvDeserializeType.cs" />
+    <Compile Include="Jsv\JsvReader.Generic.cs" />
+    <Compile Include="Jsv\JsvSerializer.Generic.cs" />
+    <Compile Include="Jsv\JsvTypeSerializer.cs" />
+    <Compile Include="Jsv\JsvWriter.Generic.cs" />
+    <Compile Include="LicenseUtils.cs" />
+    <Compile Include="ListExtensions.cs" />
+    <Compile Include="MapExtensions.cs" />
+    <Compile Include="Marc\Link.cs" />
+    <Compile Include="MemoryProvider.cs" />
+    <Compile Include="NetCoreMemory.cs" />
+    <Compile Include="ParseAsType.cs" />
+    <Compile Include="PathUtils.cs" />
+    <Compile Include="Pcl.Dynamic.cs" />
+    <Compile Include="PclExport.cs" />
+    <Compile Include="PclExport.Net40.cs" />
+    <Compile Include="PclExport.NetStandard.cs" />
+    <Compile Include="PlatformExtensions.cs" />
+    <Compile Include="Pools\BufferPool.cs" />
+    <Compile Include="Pools\CharPool .cs" />
+    <Compile Include="Pools\ObjectPool.cs" />
+    <Compile Include="Pools\PooledObject.cs" />
+    <Compile Include="Pools\SharedPoolExtensions.cs" />
+    <Compile Include="Pools\SharedPools.cs" />
+    <Compile Include="Pools\StringBuilderPool.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryStringSerializer.cs" />
+    <Compile Include="RecyclableMemoryStream.cs" />
+    <Compile Include="ReflectionExtensions.cs" />
+    <Compile Include="RuntimeSerializableAttribute.cs" />
+    <Compile Include="StreamExtensions.cs" />
+    <Compile Include="StringBuilderCache.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="StringSpanExtensions.cs" />
+    <Compile Include="StringWriterCache.cs" />
+    <Compile Include="Support\AssemblyTypeDefinition.cs" />
+    <Compile Include="Support\DoubleConverter.cs" />
+    <Compile Include="Support\TimeSpanConverter.cs" />
+    <Compile Include="Support\TypePair.cs" />
+    <Compile Include="SystemTime.cs" />
+    <Compile Include="TaskExtensions.cs" />
+    <Compile Include="TaskResult.cs" />
+    <Compile Include="TaskUtils.cs" />
+    <Compile Include="TextExtensions.cs" />
+    <Compile Include="Tracer.cs" />
+    <Compile Include="TranslateListWithElements.cs" />
+    <Compile Include="TypeAccessor.cs" />
+    <Compile Include="TypeConfig.cs" />
+    <Compile Include="TypeConstants.cs" />
+    <Compile Include="TypeFields.cs" />
+    <Compile Include="TypeProperties.cs" />
+    <Compile Include="TypeSerializer.cs" />
+    <Compile Include="TypeSerializer.Generic.cs" />
+    <Compile Include="XmlSerializer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
